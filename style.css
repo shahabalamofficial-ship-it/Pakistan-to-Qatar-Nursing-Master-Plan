@@ -1,0 +1,371 @@
+/* =========================================================
+   Pakistan → Qatar Nursing Master Plan
+   Design concept: a boarding pass you fill in one stamp at a time.
+   Palette bridges both flags; the signature element is the
+   passport-stamp progress marker on each completed stage.
+   ========================================================= */
+
+:root {
+  /* Color */
+  --bg:        #F6F1E4;   /* warm parchment, not the AI-cliché cream */
+  --paper:     #FFFDF8;
+  --ink:       #1B1E1A;
+  --ink-soft:  #52564F;
+  --green:     #0B3D2E;   /* Pakistan-inspired deep green — "from" */
+  --green-soft:#E1EAE2;
+  --maroon:    #7A1930;   /* Qatar-inspired maroon — "to" */
+  --maroon-soft:#F3E3E6;
+  --gold:      #B4893D;   /* stamp ink / highlight */
+  --line:      rgba(27, 30, 26, 0.15);
+  --shadow:    0 12px 30px rgba(11, 61, 46, 0.10);
+
+  /* Type */
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --font-urdu:    'Noto Nastaliq Urdu', serif;
+
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 100% 0%, rgba(122,25,48,0.05), transparent 45%),
+    radial-gradient(circle at 0% 100%, rgba(11,61,46,0.06), transparent 45%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+:lang(ur) { font-family: var(--font-urdu); line-height: 2.1; }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: #fff; padding: 10px 16px; z-index: 100;
+}
+.skip-link:focus { left: 12px; top: 12px; border-radius: 8px; }
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ---------- Boarding pass header ---------- */
+
+.boarding-pass {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 880px;
+  margin: 28px auto 0;
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+@media (min-width: 680px) {
+  .boarding-pass { grid-template-columns: 1.6fr 1fr; }
+}
+
+.boarding-pass__main {
+  padding: 32px 28px;
+  background:
+    linear-gradient(135deg, var(--green) 0%, #0F4A38 55%, var(--maroon) 130%);
+  color: #fff;
+  position: relative;
+}
+
+.boarding-pass__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin: 0 0 10px;
+}
+
+.boarding-pass__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.route-arrow {
+  display: inline-block;
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.boarding-pass__subtitle {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.95;
+  max-width: 46ch;
+}
+
+.boarding-pass__stub {
+  padding: 24px 26px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 10px, rgba(180,137,61,0.05) 10px 20px);
+}
+
+@media (min-width: 680px) {
+  .boarding-pass__stub {
+    border-top: none;
+    border-left: 1px dashed var(--line);
+  }
+}
+
+.stub-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+}
+
+.stub-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+}
+
+.stub-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.progress-track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--green-soft);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--green), var(--maroon));
+  transition: width 0.5s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill { transition: none; }
+}
+
+/* ---------- Main / disclaimer ---------- */
+
+main { max-width: 880px; margin: 0 auto; padding: 0 20px 60px; }
+
+.disclaimer {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin: 18px auto 8px;
+  max-width: 60ch;
+}
+
+/* ---------- Timeline ---------- */
+
+.timeline {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 6px; bottom: 6px; left: 27px;
+  width: 2px;
+  background: repeating-linear-gradient(to bottom, var(--line) 0 6px, transparent 6px 12px);
+}
+
+@media (min-width: 680px) { .timeline::before { left: 31px; } }
+
+.stage {
+  position: relative;
+  padding: 0 0 22px 66px;
+}
+
+.stage:last-child { padding-bottom: 4px; }
+
+/* Signature element: the passport stamp */
+.stage__stamp {
+  position: absolute;
+  left: 0; top: 0;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 2.5px solid var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: var(--paper);
+  color: var(--ink-soft);
+  z-index: 1;
+}
+
+.stage[data-status="current"] .stage__stamp {
+  border-color: var(--maroon);
+  color: var(--maroon);
+  box-shadow: 0 0 0 4px var(--maroon-soft);
+}
+
+.stage[data-status="done"] .stage__stamp {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-soft);
+  transform: rotate(-8deg);
+  border-style: solid;
+}
+
+.stage[data-status="done"] .stage__stamp::after {
+  content: "✓";
+}
+.stage[data-status="done"] .stage__stamp span { display: none; }
+
+.stage__card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: box-shadow 0.2s ease;
+}
+
+.stage__card:hover { box-shadow: var(--shadow); }
+
+.stage__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stage__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0;
+  color: var(--green);
+}
+
+.stage__duration {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.stage__title-ur {
+  margin: 2px 0 10px;
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+
+.stage__desc {
+  margin: 0 0 12px;
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+}
+
+.stage__checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.stage__checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.stage__checklist input {
+  margin-top: 3px;
+  accent-color: var(--green);
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+}
+
+.stage__checklist input:checked + span {
+  text-decoration: line-through;
+  color: var(--ink-soft);
+  opacity: 0.75;
+}
+
+/* ---------- Actions ---------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--green);
+  background: transparent;
+  color: var(--green);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover { background: var(--green); color: #fff; }
+
+.btn--reset {
+  border-color: var(--maroon);
+  color: var(--maroon);
+}
+.btn--reset:hover { background: var(--maroon); color: #fff; }
+
+.offline-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: 16px;
+}
+
+.site-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  padding: 24px 0 40px;
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+  .actions, .skip-link, .offline-note { display: none !important; }
+  body { background: #fff; }
+  .boarding-pass { box-shadow: none; }
+  .stage__card:hover { box-shadow: none; }
+}

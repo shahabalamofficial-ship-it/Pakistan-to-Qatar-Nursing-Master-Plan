@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "title": "Pakistan to Qatar Nursing Master Plan",
+    "subtitle": "❤️ حسن گل بھائی کی طرف سے اپنی بہن کے لیے",
+    "route": { "from": "PAK", "to": "DOH", "fromLabel": "Pakistan", "toLabel": "Qatar" },
+    "updated": "2026-08",
+    "disclaimer": "یہ روڈ میپ عمومی رہنمائی کے لیے ہے۔ حتمی فیصلوں کے لیے ہمیشہ DHP کی آفیشل ویب سائٹ (dhp.moph.gov.qa) اور اپنے ریکروٹمنٹ ایجنسی سے تازہ ترین معلومات کی تصدیق کریں۔"
+  },
+  "stages": [
+    {
+      "id": 1,
+      "title": "Eligibility Check & Documents",
+      "titleUr": "اہلیت کی جانچ اور دستاویزات",
+      "duration": "2-4 weeks",
+      "description": "Confirm your nursing qualification and gather every document DHP will ask for later, before any portal work begins.",
+      "checklist": [
+        "Pakistan Nursing Council (PNC) registration is active",
+        "Recognized nursing diploma/degree — original + attested transcripts",
+        "Experience certificates from every previous employer",
+        "Valid passport (6+ months validity)",
+        "Basic Life Support (BLS) certificate",
+        "Recent passport-size photographs"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "DataFlow Verification (PSV)",
+      "titleUr": "ڈیٹا فلو تصدیق",
+      "duration": "4-8 weeks",
+      "description": "DataFlow performs Primary Source Verification (PSV) of your education, license and experience directly with the issuing institutions. As of Jan 2026 this step is mandatory for every applicant, no exceptions.",
+      "checklist": [
+        "Create a DataFlow account and open a case",
+        "Pay the verification fee",
+        "Submit education, license and experience documents",
+        "Track case until PSV report is issued"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "DHP Account & Eligibility ID",
+      "titleUr": "DHP اکاؤنٹ اور اہلیت آئی ڈی",
+      "duration": "1-2 weeks",
+      "description": "Register on the Sheryan/DHP e-registration portal (the system many still call QCHP) and submit your documents to receive an eligibility ID — this unlocks Prometric booking.",
+      "checklist": [
+        "Create Sheryan/DHP portal account",
+        "Complete personal & professional profile",
+        "Upload PSV report and supporting documents",
+        "Receive eligibility ID"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Prometric Exam (or Exemption)",
+      "titleUr": "پرومیٹرک امتحان یا استثنیٰ",
+      "duration": "4-6 weeks",
+      "description": "Sit the Qatar Prometric qualifying exam, or apply for an exemption if you hold a recognized qualifying exam already — exemptions must now be backed by a PSV report too. A passed qualifying exam is typically valid for 3 years.",
+      "checklist": [
+        "Register and pay the Prometric exam fee",
+        "Study core topics: medical-surgical, cardiovascular, renal/urinary, wound care",
+        "Book test center and sit the exam",
+        "If exempt: confirm PSV-supported exemption is accepted"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Evaluation Application",
+      "titleUr": "تشخیصی درخواست",
+      "duration": "2-4 weeks",
+      "description": "With PSV and exam results in hand, submit the preliminary Evaluation application through the DHP portal.",
+      "checklist": [
+        "Pay preliminary evaluation fee (approx. 100 QAR)",
+        "Submit DataFlow report",
+        "Submit Prometric result / exemption proof",
+        "Submit passport and visa copy"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Job Offer & Sponsorship",
+      "titleUr": "جاب آفر اور کفالت",
+      "duration": "Varies",
+      "description": "Apply to Qatar healthcare employers (public hospitals like Hamad Medical Corporation, or private facilities). Final licensing is tied to an employer's sponsorship.",
+      "checklist": [
+        "Build/update CV for Qatar healthcare employers",
+        "Apply directly or through a licensed recruitment agency",
+        "Attend interviews",
+        "Receive and review signed job offer letter"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Final Licensing & Registration",
+      "titleUr": "حتمی لائسنس اور رجسٹریشن",
+      "duration": "2-4 weeks",
+      "description": "Once evaluation is approved and an employer sponsors you, DHP issues the official license and registration number to practice in Qatar.",
+      "checklist": [
+        "Employer confirms sponsorship in the DHP portal",
+        "Complete any remaining document requests",
+        "Receive official license certificate and number"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Visa, Medical Exam & Relocation",
+      "titleUr": "ویزا، طبی معائنہ اور نقل مکانی",
+      "duration": "4-8 weeks",
+      "description": "Employer processes the Qatar work visa. Complete the medical fitness test and arrange travel. The full journey from PSV to arrival commonly takes 3-6 months in total.",
+      "checklist": [
+        "Employer initiates work visa",
+        "Complete medical fitness examination",
+        "Visa stamped / approved",
+        "Book travel and arrange accommodation"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Arrival & Orientation",
+      "titleUr": "آمد اور تعارفی تربیت",
+      "duration": "1-2 weeks",
+      "description": "On arrival, complete local formalities and hospital induction — the final stamp before starting work as a licensed nurse in Qatar.",
+      "checklist": [
+        "Complete arrival medical/biometric formalities",
+        "Attend hospital induction & orientation program",
+        "Collect Qatar ID (QID) once issued",
+        "Begin work as a registered nurse in Qatar 🎉"
+      ]
+    }
+  ]
+}

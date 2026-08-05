@@ -1,0 +1,14 @@
+{
+  "name": "Pakistan to Qatar Nursing Master Plan",
+  "short_name": "Nursing Plan",
+  "description": "A step-by-step licensing and relocation tracker for nurses moving from Pakistan to Qatar.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F6F1E4",
+  "theme_color": "#0B3D2E",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
